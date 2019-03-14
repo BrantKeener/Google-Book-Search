@@ -15,6 +15,7 @@ class App extends Component {
           <Navbar />
           <Hero />
           <Wrapper>
+            <Search />
             <Route exact path = '/' compononet = {Search} />
             <Route exact path = '/saved' compononet = {Saved} />
           </Wrapper>
