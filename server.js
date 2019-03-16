@@ -7,6 +7,9 @@ const PORT = process.env.PORT || 3001;
 app.use(express.urlencoded({ extended:true }));
 app.use(express.json());
 
+// Add route
+require('./routes/apiRoutes')(app);
+
 // Serve static assets for sites like heroku
 if(process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'))
