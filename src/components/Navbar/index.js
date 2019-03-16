@@ -13,7 +13,7 @@ const Navbar = () => {
       <div className = 'nav-links'>
         <ul>
           <li className = 'nav-item'>
-            <Link className = 'nav-search' to = '/search'>
+            <Link className = 'nav-search' to = '/'>
               Search
             </Link>
           </li>
