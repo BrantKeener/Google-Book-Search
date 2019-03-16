@@ -1,16 +1,11 @@
 import React from 'react';
-import Button from '../Button';
 
-const Result = ({ 
-  buttonClass1, 
-  buttonClass2, 
-  buttonText1, 
-  buttonText2}) => {
+const Result = (props) => {
+  const { children } = props;
   return (
     <section className = 'result'>
       <section className = 'result-buttons'>
-        <Button classy = {buttonClass1} buttonText = {buttonText1} />
-        <Button classy = {buttonClass2} buttonText = {buttonText2} />
+        { children }
       </section>
       <section className = 'result-title-author'>
         <h3 className = 'result-book-title'>Title</h3>
