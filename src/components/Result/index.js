@@ -8,12 +8,12 @@ const Result = (props) => {
         { children }
       </section>
       <section className = 'result-title-author'>
-        <h3 className = 'result-book-title'>Title</h3>
-        <h4 className = 'result-author'>Author</h4>
+        <h3 className = 'result-book-title'>{props.title}</h3>
+        <h4 className = 'result-author'>{props.authors}</h4>
       </section>
       <section className = 'result-image-synopsis'>
-        <img className = 'result-image' alt = 'Book Jacket'></img>
-        <p className = 'result-synopsis'></p>
+        <img src = {props.image} className = 'result-image' alt = 'Book Jacket'></img>
+        <p className = 'result-synopsis'>{props.description}</p>
       </section>
     </section>
   )

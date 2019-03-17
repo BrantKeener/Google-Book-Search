@@ -6,9 +6,9 @@ const Searchbar = ({ onClick }) => {
     <form>
       <fieldset>
         <legend>Book Search</legend>
-        <label name = 'search title'>Book Title</label>
-        <input name = 'search title' type = 'text'></input>
-        <Button type = 'submit' classy = '' buttonText = 'Search' onClick = {onClick}/>
+        <label name = 'searchAPI'>Book Title</label>
+        <input name = 'searchAPI' type = 'text'></input>
+        <Button name = 'searchAPI' button = 'submit' classy = '' buttonText = 'Search' onClick = {onClick}/>
       </fieldset>
     </form>
   )
