@@ -9,7 +9,6 @@ app.use(express.json());
 
 // Add route
 require('./routes/apiRoutes')(app);
-require('./controllers/books_controllers')(app);
 
 // Serve static assets for sites like heroku
 if(process.env.NODE_ENV === 'production') {
