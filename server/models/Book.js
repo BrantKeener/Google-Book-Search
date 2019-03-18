@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 // Book schema
 // Because of how I built the data retrieval from google, there should be no empty entries
-const BookSchema = new Schema({
+const bookSchema = new Schema({
   title: {
     type: String,
     required: true
@@ -26,6 +26,6 @@ const BookSchema = new Schema({
   }
 });
 
-const Book = mongoose.model('Book', BookSchema);
+const Book = mongoose.model('Book', bookSchema);
 
 module.exports = Book;

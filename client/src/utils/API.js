@@ -11,5 +11,12 @@ export default {
       // const author;
       const builtURL = `${baseURL}${searchTerm}${title}${APIKey}`;
       return axios.get(builtURL)
+  },
+  
+  loadBooksDB: () => {
+    axios.get('/books')
+      .then(response => {
+        console.log(response);
+      })
   }
 }

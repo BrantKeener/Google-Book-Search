@@ -15,8 +15,8 @@ class Search extends Component {
   };
 
   saveBook = (event) => {
-    const index = event.target.name;
-    const book = (this.state.books[index]);
+    // const index = event.target.name;
+    // const book = (this.state.books[index]);
     
   };
 

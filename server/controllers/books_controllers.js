@@ -3,19 +3,19 @@ const db = require('../models');
 
 module.exports = {
   // Get request for all the saved files
-  findAll: (req, res) => {
+  findAll: (cb) => {
     db.Book
-      .findAll({})
-      .then(dbModel => res.json(dbModel))
-      .catch(error => res.status(422).json(error));
+      .find({})
+      .then(dbModel => cb(dbModel))
+      .catch(error => cb(error));
   },
 
   // Save new books
-  create: (req, res) => {
+  create: (req, cb) => {
     db.Book
       .create(req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(error => res.status(422).json(error));
+      .then(dbModel => cb(dbModel))
+      .catch(error => cb(error));
   },
 
   // Delete a book TODO this
@@ -32,3 +32,8 @@ module.exports = {
     });
   }
 };
+
+// MyModel.findOneAndUpdate(query, req.newData, {upsert:true}, function(err, doc){
+//   if (err) return res.send(500, { error: err });
+//   return res.send("succesfully saved");
+// });
