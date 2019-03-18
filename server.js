@@ -8,7 +8,7 @@ app.use(express.urlencoded({ extended:true }));
 app.use(express.json());
 
 // Add route
-require('./public/routes/apiRoutes')(app);
+require('./server/routes/apiRoutes')(app);
 
 // Serve static assets for sites like heroku
 if(process.env.NODE_ENV === 'production') {

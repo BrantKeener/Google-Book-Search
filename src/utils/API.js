@@ -14,9 +14,10 @@ export default {
   },
   
   loadBooksDB: () => {
-    axios.get('/books')
-      .then(response => {
-        console.log(response);
-      })
+    return axios.get('/books')
+  },
+
+  deleteBookDB: () => {
+    
   }
 }

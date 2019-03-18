@@ -3,7 +3,7 @@
 const booksController = require('../controllers/books_controllers');
 
 module.exports = (app) => {
-  app.get('/sbooks', (req, res) => {
+  app.get('/books', (req, res) => {
     booksController.findAll((response) => {
       res.json(response);
     })
