@@ -13,4 +13,9 @@ module.exports = (app) => {
       res.send(response);
     });
   })
+  app.delete('/book/:id', (req, res) => {
+    booksController.remove(req.params.id, (response => {
+      res.send(response);
+    }))
+  })
 }

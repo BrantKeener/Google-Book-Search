@@ -19,17 +19,13 @@ module.exports = {
   },
 
   // Delete a book TODO this
-  remove: (req, res) => {
+  remove: (req, cb) => {
     db.Book
-    .remove({
-    
-    })
-    .then(data => {
-      return res.json(data);
-    })
-    .catch(error => {
-      throw error;
-    });
+      .deleteOne({
+        _id: req
+      })
+      .then(data => cb("Deleted!"))
+      .catch(error => cb(error))
   }
 };
 

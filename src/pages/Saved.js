@@ -17,7 +17,6 @@ class Saved extends Component {
       .then(response => {
         const data = response.data;
         this.setState({ savedBooks: data });
-        console.log(this.state.savedBooks);
       })
   }
 
@@ -26,7 +25,12 @@ class Saved extends Component {
   }
 
   deleteBook = (event) => {
-    console.log(event.target.name);
+    const { name } = event.target
+    API.deleteBookDB(name)
+      .then(response => {
+        console.log(response);
+      })
+    this.loadSavedBooks();
   }
 
   render() {
