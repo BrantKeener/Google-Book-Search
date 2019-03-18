@@ -11,11 +11,11 @@ app.use(express.json());
 require('./server/routes/apiRoutes')(app);
 
 // Serve static assets for sites like heroku
-// if(process.env.NODE_ENV === 'production') {
-  // app.use(express.static('client/build'))
-// } else {
+if(process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'))
+} else {
   app.use(express.static('server'));
-// };
+};
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/googlebooksearch', { useNewUrlParser: true });

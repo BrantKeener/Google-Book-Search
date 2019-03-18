@@ -6,7 +6,7 @@ export default {
   googleSearch: (search) => {
       const baseURL = 'https://www.googleapis.com/books/v1/volumes?q=';
       const title = search;
-      const APIKey = `&key=AIzaSyDMX_RyfOu4ZzxU35F_gZIwqAejUySmKeM`;
+      const APIKey = `&key=${process.env.API_KEY}`;
       const searchTerm = 'intitle:';
       // const author;
       const builtURL = `${baseURL}${searchTerm}${title}${APIKey}`;
