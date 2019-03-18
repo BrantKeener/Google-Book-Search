@@ -15,9 +15,12 @@ class Search extends Component {
   };
 
   saveBook = (event) => {
-    // const index = event.target.name;
-    // const book = (this.state.books[index]);
-    
+    const index = event.target.name;
+    const book = (this.state.books[index]);
+    API.saveBookDB(book)
+      .then(response => {
+        alert(`You saved: ${response.data.title}`);
+      })
   };
 
   searchBook = (event) => {
@@ -29,7 +32,7 @@ class Search extends Component {
         const booksData = response.data.items;
         for (let i = 0; i < Object.keys(booksData).length; i++) {
           const volume = booksData[i].volumeInfo;
-          let image = volume.imageLinks ? volume.imageLinks.thumbnail : 'No Image Provided'
+          let image = volume.imageLinks ? volume.imageLinks.thumbnail : 'https://picsum.photos/200';
           const bookObject = {
             title: volume.title || 'No Title Provided',
             authors: volume.authors || 'No Authors Provided',

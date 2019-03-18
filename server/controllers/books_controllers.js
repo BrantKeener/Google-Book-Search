@@ -13,7 +13,7 @@ module.exports = {
   // Save new books
   create: (req, cb) => {
     db.Book
-      .create(req.body)
+      .create(req)
       .then(dbModel => cb(dbModel))
       .catch(error => cb(error));
   },
@@ -24,12 +24,7 @@ module.exports = {
       .deleteOne({
         _id: req
       })
-      .then(data => cb("Deleted!"))
+      .then(data => cb(`Deleted: ${data}`))
       .catch(error => cb(error))
   }
 };
-
-// MyModel.findOneAndUpdate(query, req.newData, {upsert:true}, function(err, doc){
-//   if (err) return res.send(500, { error: err });
-//   return res.send("succesfully saved");
-// });

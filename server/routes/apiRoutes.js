@@ -9,7 +9,7 @@ module.exports = (app) => {
     })
   })
   app.put('/savebook', (req, res) => {
-    booksController.create(req, (response) => {
+    booksController.create(req.body, (response) => {
       res.send(response);
     });
   })
